@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    style="@style/width_match_height_match"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        style="@style/width_match_height_wrap"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            style="@style/width_match_height_wrap"
+            android:hint="ПІП" />
+
+        <EditText
+            android:id="@+id/ageEditText"
+            style="@style/width_match_height_wrap"
+            android:hint="Вік"
+            android:inputType="number" />
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Бажана зарплата:" />
+
+        <SeekBar
+            android:id="@+id/salarySeekBar"
+            style="@style/width_match_height_wrap"
+            android:max="5000" />
+
+        <TextView
+            android:id="@+id/salaryText"
+            style="@style/width_wrap_height_wrap"
+            android:text="USD:" />
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Quisque libero nisl, gravida sed." />
+
+        <RadioGroup style="@style/width_match_height_match">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                style="@style/width_wrap_height_wrap"
+                android:text="Suspendisse congue." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Cras ullamcorper." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Nunc consectetur." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Sed eget." />
+        </RadioGroup>
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Ut dignissim posuere posuere. Morbi." />
+
+        <RadioGroup style="@style/width_match_height_match">
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Nullam id." />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                style="@style/width_wrap_height_wrap"
+                android:text="Donec suscipit." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Proin mauris." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Praesent dictum." />
+        </RadioGroup>
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Ut ultrices tortor eu vulputate." />
+
+        <RadioGroup style="@style/width_match_height_match">
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Integer eget." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Morbi efficitur." />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                style="@style/width_wrap_height_wrap"
+                android:text="In posuere." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Sed iaculis." />
+        </RadioGroup>
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Mauris consectetur dictum orci, et." />
+
+        <RadioGroup style="@style/width_match_height_match">
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Class aptent." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Ut quis." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Sed eu." />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                style="@style/width_wrap_height_wrap"
+                android:text="Nullam eu." />
+        </RadioGroup>
+
+        <TextView
+            style="@style/width_wrap_height_wrap"
+            android:text="Etiam finibus pellentesque purus, eget." />
+
+        <RadioGroup style="@style/width_match_height_wrap">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                style="@style/width_wrap_height_wrap"
+                android:text="Donec lorem." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Morbi non." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Interdum et." />
+
+            <RadioButton
+                style="@style/width_wrap_height_wrap"
+                android:text="Cras odio." />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/expCheckBox"
+            style="@style/width_wrap_height_wrap"
+            android:text="Досвід від 2 років" />
+
+        <CheckBox
+            android:id="@+id/teamCheckBox"
+            style="@style/width_wrap_height_wrap"
+            android:text="Командна робота" />
+
+        <CheckBox
+            android:id="@+id/travelCheckBox"
+            style="@style/width_wrap_height_wrap"
+            android:text="Готовність до відряджень" />
+
+        <Button
+            android:id="@+id/submitButton"
+            style="@style/width_match_height_wrap"
+            android:text="Здати тест"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/resultText"
+            style="@style/width_match_height_wrap"
+            android:text=""
+            android:visibility="gone" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

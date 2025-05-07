@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textInput"
+        style="@style/CalcText"
+        android:layout_height="0dp"
+        android:gravity="bottom|right"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_div"
+            app:layout_column="3"
+            app:layout_row="5" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_7"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_8"
+            app:layout_column="1"
+            app:layout_row="2" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_9"
+            app:layout_column="2"
+            app:layout_row="2" />
+
+        <Button
+            style="@style/CalcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_mul"
+            app:layout_column="3"
+            app:layout_row="2" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_4"
+            app:layout_column="0"
+            app:layout_row="3" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_5"
+            app:layout_column="1"
+            app:layout_row="3" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_6"
+            app:layout_column="2"
+            app:layout_row="3" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_minus"
+            app:layout_column="3"
+            app:layout_row="3" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_1"
+            app:layout_column="0"
+            app:layout_row="4" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_2"
+            app:layout_column="1"
+            app:layout_row="4" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_3"
+            app:layout_column="2"
+            app:layout_row="4" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_plus"
+            app:layout_column="3"
+            app:layout_row="4" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_clr"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_0"
+            app:layout_column="1"
+            app:layout_row="5" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_dot"
+            app:layout_column="2"
+            app:layout_row="5" />
+
+        <Button
+            style="@style/CalcButton"
+            android:text="@string/btn_eq"
+            app:layout_column="3"
+            app:layout_columnSpan="2"
+            app:layout_row="1" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_eq"
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_div"
+                app:layout_column="2"
+                app:layout_row="2" />
+
+            <Button
+                style="@style/CalcButton"
+                android:layout_width="match_parent"
+                android:text="@string/btn_del"
+                app:layout_column="3"
+                app:layout_row="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_7"
+                app:layout_column="0"
+                app:layout_row="2" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_8"
+                app:layout_column="1"
+                app:layout_row="2" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_9"
+                app:layout_column="2"
+                app:layout_row="2" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_mul"
+                app:layout_column="3"
+                app:layout_row="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_4"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_5"
+                app:layout_column="1"
+                app:layout_row="3" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_6"
+                app:layout_column="2"
+                app:layout_row="3" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_minus"
+                app:layout_column="3"
+                app:layout_row="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_1"
+                app:layout_column="0"
+                app:layout_row="4" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_2"
+                app:layout_column="1"
+                app:layout_row="4" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_3"
+                app:layout_column="2"
+                app:layout_row="4" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_plus"
+                app:layout_column="3"
+                app:layout_row="4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_dot"
+                app:layout_column="0"
+                app:layout_row="5" />
+
+            <Button
+                style="@style/CalcButton"
+                android:text="@string/btn_0"
+                app:layout_column="1"
+                app:layout_row="5" />
+
+            <Button
+                style="@style/CalcButton"
+                android:layout_width="match_parent"
+                android:text="@string/btn_clr"
+                app:layout_column="3"
+                app:layout_row="5" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
