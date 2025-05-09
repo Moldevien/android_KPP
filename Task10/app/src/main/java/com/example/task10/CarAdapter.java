@@ -18,20 +18,11 @@ import java.util.List;
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
     private List<Car> cars;
     private LayoutInflater inflater;
-    //private OnItemClickListener listener;
 
     public CarAdapter(Context context, List<Car> cars) {
         this.cars = cars;
         this.inflater = LayoutInflater.from(context);
     }
-
-    /*public interface OnItemClickListener {
-        void onItemClick(Car car);
-    }*/
-
-    /*public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
-    }*/
 
     @NonNull
     @Override
@@ -49,12 +40,6 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
         holder.textYear.setText(String.valueOf(car.getYear()));
         holder.textCost.setText(String.valueOf(car.getCost()));
         holder.textDescription.setText(car.getDescription());
-
-        /*holder.itemView.setOnClickListener(v -> {
-            if (listener != null) {
-                listener.onItemClick(car);
-            }
-        });*/
     }
 
     @Override

@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -39,27 +41,24 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CarAdapter(this, cars);
         recyclerView.setAdapter(adapter);
-
-
-        /*adapter.setOnItemClickListener(car -> Toast.makeText(getApplicationContext(), "Обрано " + car.getBrand() + " " + car.getModel(),
-                Toast.LENGTH_SHORT).show());*/
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
-            ArrayList<Car> filteredCars = (ArrayList<Car>) data.getSerializableExtra("filtered");
-            if (filteredCars != null && !filteredCars.isEmpty()) {
-                recyclerView.setAdapter(new CarAdapter(this, filteredCars));
-            } else {
-                Toast.makeText(this, "Нічого не знайдено", Toast.LENGTH_SHORT).show();
+    ActivityResultLauncher<Intent> searchLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    ArrayList<Car> filteredCars = (ArrayList<Car>) result.getData().getSerializableExtra("filtered");
+                    if (filteredCars != null && !filteredCars.isEmpty()) {
+                        recyclerView.setAdapter(new CarAdapter(this, filteredCars));
+                    } else {
+                        Toast.makeText(this, "Нічого не знайдено", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
-        }
-    }
+    );
 
     public void searchClick(View view) {
         Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-        startActivityForResult(intent, 1);
+        searchLauncher.launch(intent);
     }
 }
