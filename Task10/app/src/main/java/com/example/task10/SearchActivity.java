@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -23,22 +22,13 @@ import java.util.TreeSet;
 public class SearchActivity extends AppCompatActivity {
     private AutoCompleteTextView brandInput, modelInput;
     private Spinner spinnerYearFrom, spinnerYearTo, spinnerPriceFrom, spinnerPriceTo;
-
-    private List<Car> cars = MainActivity.cars;
+    private ArrayList<Car> cars = MainActivity.cars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        brandInput = findViewById(R.id.brandInput);
-        modelInput = findViewById(R.id.modelInput);
-        spinnerYearFrom = findViewById(R.id.spinnerYearFrom);
-        spinnerYearTo = findViewById(R.id.spinnerYearTo);
-        spinnerPriceFrom = findViewById(R.id.spinnerPriceFrom);
-        spinnerPriceTo = findViewById(R.id.spinnerPriceTo);
-
-        // автозаповнення марок та моделей
         Set<String> brands = new HashSet<>();
         Set<String> models = new HashSet<>();
         Set<Integer> years = new TreeSet<>();
@@ -51,24 +41,30 @@ public class SearchActivity extends AppCompatActivity {
 
         ArrayAdapter<String> brandAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, new ArrayList<>(brands));
+        brandInput = findViewById(R.id.brandInput);
         brandInput.setAdapter(brandAdapter);
 
         ArrayAdapter<String> modelAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, new ArrayList<>(models));
+        modelInput = findViewById(R.id.modelInput);
         modelInput.setAdapter(modelAdapter);
 
         ArrayAdapter<Integer> yearAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, new ArrayList<>(years));
+        spinnerYearFrom = findViewById(R.id.spinnerYearFrom);
         spinnerYearFrom.setAdapter(yearAdapter);
+        spinnerYearTo = findViewById(R.id.spinnerYearTo);
         spinnerYearTo.setAdapter(yearAdapter);
 
         ArrayAdapter<Integer> priceAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, prices);
+        spinnerPriceFrom = findViewById(R.id.spinnerPriceFrom);
         spinnerPriceFrom.setAdapter(priceAdapter);
+        spinnerPriceTo = findViewById(R.id.spinnerPriceTo);
         spinnerPriceTo.setAdapter(priceAdapter);
     }
 
-    public void searchClick(View view) {
+    public void onClick(View view) {
         String brand = brandInput.getText().toString().trim().toLowerCase();
         String model = modelInput.getText().toString().trim().toLowerCase();
 

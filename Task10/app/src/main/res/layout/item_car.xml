@@ -10,50 +10,68 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
         android:layout_weight="0" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        app:columnCount="4"
+        app:rowCount="2">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textBrand"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:text="Brand"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_row="0" />
 
-            <TextView
-                android:id="@+id/textBrand"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model"
+            android:textStyle="bold"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_row="0" />
 
-            <TextView
-                android:id="@+id/textModel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textStyle="bold"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_row="0" />
 
-            <TextView
-                android:id="@+id/textYear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cost"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_row="0" />
 
         <TextView
             android:id="@+id/textDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            app:layout_column="0"
+            app:layout_columnSpan="3"
+            app:layout_columnWeight="1"
+            app:layout_row="1" />
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="textEnd"
-        android:textStyle="bold" />
+    </androidx.gridlayout.widget.GridLayout>
 
 </LinearLayout>

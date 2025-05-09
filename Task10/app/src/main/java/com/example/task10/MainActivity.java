@@ -21,8 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static List<Car> cars = new ArrayList<>();
-    private RecyclerView recyclerView;
+    static ArrayList<Car> cars = new ArrayList<>();
+    RecyclerView recyclerView;
+    CarAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +31,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         cars.add(new Car("Toyota", "Camry", 2020, "Стан чудовий", 25000, R.drawable.img));
         cars.add(new Car("BMW", "X5", 2018, "Можливий торг", 35000, R.drawable.img_1));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // адаптер для виводу
-        CarAdapter adapter = new CarAdapter(this, cars);
+        adapter = new CarAdapter(this, cars);
         recyclerView.setAdapter(adapter);
+
+
+        /*adapter.setOnItemClickListener(car -> Toast.makeText(getApplicationContext(), "Обрано " + car.getBrand() + " " + car.getModel(),
+                Toast.LENGTH_SHORT).show());*/
     }
 
     @Override
@@ -61,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void searchClick(View view) {
-        startActivityForResult(new Intent(MainActivity.this, SearchActivity.class), 1);
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        startActivityForResult(intent, 1);
     }
 }
